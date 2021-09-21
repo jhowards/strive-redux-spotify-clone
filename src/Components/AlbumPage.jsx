@@ -3,9 +3,10 @@ import { useParams } from "react-router";
 import { useState, useEffect } from "react";
 import { Spinner, Alert } from "react-bootstrap";
 import AlbumBodyContent from "./AlbumBodyContent";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 function AlbumPage() {
+  const history = useHistory();
   const [albumDetails, setAlbumDetails] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
@@ -60,12 +61,26 @@ function AlbumPage() {
         <div className="stickynav">
           <div className="navcontent">
             <div className="arrows">
-              <div className="circle mr-3">
-                <div className="arrow left"></div>
-              </div>
-              <div className="circle">
-                <div className="arrow right"></div>
-              </div>
+              <a
+                className="linkclear"
+                onClick={() => {
+                  history.goBack();
+                }}
+              >
+                <div className="circle mr-3">
+                  <div className="arrow left"></div>
+                </div>
+              </a>
+              <a
+                className="linkclear"
+                onClick={() => {
+                  history.goForward();
+                }}
+              >
+                <div className="circle">
+                  <div className="arrow right"></div>
+                </div>
+              </a>
             </div>
 
             <div className="useraccount d-none d-lg-block mr-5">

@@ -1,18 +1,34 @@
 import React from "react";
 import AlbumList from "./AlbumList";
+import { useHistory } from "react-router-dom";
 
 const Homepage = () => {
+  const history = useHistory();
   return (
     <div className="container-fluid mainbody px-0">
       <div className="stickynav">
         <div className="navcontent">
           <div className="arrows">
-            <div className="circle mr-3">
-              <div className="arrow left"></div>
-            </div>
-            <div className="circle">
-              <div className="arrow right"></div>
-            </div>
+            <a
+              className="linkclear"
+              onClick={() => {
+                history.goBack();
+              }}
+            >
+              <div className="circle mr-3">
+                <div className="arrow left"></div>
+              </div>
+            </a>
+            <a
+              className="linkclear"
+              onClick={() => {
+                history.goForward();
+              }}
+            >
+              <div className="circle">
+                <div className="arrow right"></div>
+              </div>
+            </a>
           </div>
 
           <div className="useraccount d-none d-lg-block mr-5">

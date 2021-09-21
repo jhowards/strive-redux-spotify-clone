@@ -2,9 +2,11 @@ import React from "react";
 import { useParams } from "react-router";
 import { useState, useEffect } from "react";
 import { Spinner, Alert } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function ArtistPage() {
+  const history = useHistory();
+
   const [artistDetails, setArtistDetails] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
@@ -58,12 +60,26 @@ function ArtistPage() {
       <div className="navbar-fixed-top">
         <div className="navcontent">
           <div className="arrows">
-            <div className="circle mr-3">
-              <div className="arrow left"></div>
-            </div>
-            <div className="circle">
-              <div className="arrow right"></div>
-            </div>
+            <a
+              className="linkclear"
+              onClick={() => {
+                history.goBack();
+              }}
+            >
+              <div className="circle mr-3">
+                <div className="arrow left"></div>
+              </div>
+            </a>
+            <a
+              className="linkclear"
+              onClick={() => {
+                history.goForward();
+              }}
+            >
+              <div className="circle">
+                <div className="arrow right"></div>
+              </div>
+            </a>
           </div>
 
           <div className="useraccount d-none d-lg-block mr-5">

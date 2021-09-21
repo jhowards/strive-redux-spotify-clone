@@ -259,6 +259,11 @@ a:hover {
   display: inline-block;
 }
 
+.circle:hover {
+  cursor: pointer;
+  background-color: #414141;
+}
+
 .arrow {
   border: solid white;
   border-width: 0 3px 3px 0;
@@ -949,4 +954,8 @@ div {
   background-attachment: fixed;
   height: 45vh;
   width: 100%;
+}
+
+.linkclear {
+  all: unset;
 }
