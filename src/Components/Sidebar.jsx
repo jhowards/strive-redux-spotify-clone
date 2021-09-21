@@ -29,7 +29,7 @@ const Sidebar = () => {
           </Link>
         </li>
         <li className="sidelist" data-toggle="modal">
-          <a className="navitem" href="#">
+          <Link className="navitem" to="/search">
             <span
               className="iconify mr-3"
               data-icon="akar-icons:search"
@@ -46,7 +46,7 @@ const Sidebar = () => {
             >
               Search
             </span>
-          </a>
+          </Link>
         </li>
         <li className="sidelist ml-4">Your Library</li>
         <br />
