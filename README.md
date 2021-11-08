@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# Brief
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Redux Spotify
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+ 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Organize with your team to have a common version of Reacy Spotify connected to the RapidAPI API, through the Strive endpoint. Alternatively, you can start from the attached template.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+ 
 
-### `npm test`
+💿 Album Page
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ 
 
-### `npm run build`
+Parameter: album id
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Endpoint : https://striveschool-api.herokuapp.com/api/deezer/album/{id}
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Example: https://striveschool-api.herokuapp.com/api/deezer/album/75621062
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+ 
 
-### `npm run eject`
+🎸 Artist page
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+ 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Parameter: artist id
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Endpoint: https://striveschool-api.herokuapp.com/api/deezer/artist/{id}
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Example: https://striveschool-api.herokuapp.com/api/deezer/artist/412
 
-## Learn More
+ 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+🔍 Search
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+ 
 
-### Code Splitting
+Parameter: query
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Endpoint: https://striveschool-api.herokuapp.com/api/deezer/search?q={query}
 
-### Analyzing the Bundle Size
+Example: https://striveschool-api.herokuapp.com/api/deezer/search?q=queen
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+ 
 
-### Making a Progressive Web App
+Once you have it, transform the application by using Redux stores in order to maintain the status of the application.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+ 
 
-### Advanced Configuration
+📑 Features:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+ 
 
-### Deployment
+- Homepage, Album page, Artist page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- When clicking on a song, the name and the details should appear in the "player" section
 
-### `npm run build` fails to minify
+- Next to each song, you should be able to "Like" the song. From that moment on, wherever the song appears, the like "status" should be maintained
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [EXTRA] Save in the redux store the songs you retrieve from the APIs as well
+
+- [EXTRA] Be able to add songs to other playlists besides the playing queue
+
+- [EXTRA] Implement an UNDO functionality
+
+ 
+
+💡 Hints:
+
+ 
+
+- Use the store for saving the songs the user liked and check accordingly everytime you display a song
+
+- Use the store for keeping track of the song that is currently playing.
+
+- Use redux-thunk to wrap your async calls in reusable actions
+
+- For the undo:
+
+npm i redux-undo
+- Or if you really want to implement it yourself: https://redux.js.org/recipes/implementing-undo-history
